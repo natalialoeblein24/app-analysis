@@ -7,8 +7,8 @@ WORKDIR /app
 # Copia o arquivo de requisitos para o diretório de trabalho
 COPY requirements.txt .
 
-# Instala as dependências necessárias
-RUN pip install --no-cache-dir -r requirements.txt
+# Instala as dependências necessárias usando um mirror alternativo
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Copia todos os arquivos da aplicação para o diretório de trabalho
 COPY . .
